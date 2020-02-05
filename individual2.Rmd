@@ -1,0 +1,39 @@
+---
+title: "Lab 2"
+author: "Meredith Tucker"
+date: "2/5/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+
+```
+
+# Question Set (Individual)
+
+1. How are the ratings distributed? Draw a histogram of the ratings and describe it. Don’t forget to mention outliers, if there are any.
+
+```{r}
+Rate <- choco$Rating
+hist(Rate, main="Distribution of Ratings", xlab="Rating")
+```
+
+
+The most frequent Rating in the data set are ratings between 3 and 3.5. The second most frequent rating are those between 2.5 and 3. There are very few values that have a rating of 1 or a rating of 5. 
+
+
+
+2. Do ratings depend on the cacao percentage of a chocolate bar?
+
+```{r}
+plot(choco$Cocoa.Pct, choco$Rating, main="Cacao Percentage and Ranking", xlab='Cacao Percentage', ylab='Rating')
+```
+
+There is no clear correlation shown in the scatterplot between the percenatage of cacao and the rating of the chocolate. 
+
