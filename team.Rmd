@@ -22,33 +22,28 @@ length(choco$Rating)
 
 There are 1852 chocolate bars that are rated in the data set. 
 
-
 2. How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
 
 ```{r}
-
 choco$Review.Date <- as.factor(choco$Review.Date)
 
-
 YearTotal <- c(72, 77,93,123,111,165, 195,184, 247,285,219,81)
-
 YearNames <- c("2006", "2007", "2008", "2009", '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017')
 
-barplot(YearTotal,names.arg = YearNames)
-
-
+barplot(YearTotal,names.arg = YearNames, col=c('blue', 'green'))
 ```
 
 3. Which are the three locations with the most ratings? How do ratings compare across these company locations?
 
 ```{r}
-
 loco <- choco$Company.Location
 names(loco) <- choco$Company.Location
 numloco <- summary(loco)
 biggest3 <- sort(numloco, decreasing = TRUE)[1:3]
 biggest3
+```
 
+```{r}
 USA <- choco[choco$Company.Location == "U.S.A.", ]
 France <- choco[choco$Company.Location == "France", ]
 Canada <- choco[choco$Company.Location == "Canada", ]
@@ -62,17 +57,21 @@ The three countries that have the most number of ratings all have about the same
 
 4. Brainstorm and write down an interesting question that can be answer from the dataset. The question should not duplicate the questions above.
 
-Question; Which company has the most number of ratings?
+Question: Which company has the most number of ratings?
 
 5. Answer the question from the dataset.
 
 ```{r}
 head(sort(summary(choco$Company), decreasing=T))
-
 ```
 
-Without including the unnamed companies, the largest company reviewed was Soma.
+Without including the unnamed companies, the largest company reviewed was Soma. This was followed by Bonnat and Fresco.
 
-6. Write one Paragraph commenting on the workflow
+6. Write one paragraph commenting on the workflow
 
-We worked dilgently together and used our resources to find the best methods to create solutions. When we started a new problem we brainstormed ideas of what to do. From there we both worked on our brainstorming ideas each on our laptops and then combined the end product. If it would not work, we then used trial and error to fix the mistake. 
+We worked dilgently together and used our resources to find the best methods to create solutions. When we started a new problem we brainstormed ideas of what to do. From there we both worked on our brainstorming ideas each on our laptops and then combined the end product. If it would not work, we then used trial and error to fix the mistake. Once we found the answer, we coded into the team.Rmd file. We did not bother to make it look perfect as the second person could edit it.
+
+
+
+
+
