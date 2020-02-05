@@ -1,0 +1,31 @@
+---
+title: "Lab 2"
+author: "Mike Zaino"
+date: "2/5/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+choco <- read.csv("https://xdaiisu.github.io/ds202materials/hwlabs/choco.csv")
+head(choco)
+```
+
+```{r}
+hist(choco$Rating)
+```
+
+Based on the histogram, it seems like that are a lot of chocoalte ratings around 3 and 4. We can see that there is an outler at 5. So, clearly there are a few choclates that are above all else.
+
+```{r}
+ggplot(choco, aes(y=Rating, x=Cocoa.Pct))+geom_point()+
+  labs(x="Percentage", y="Rating", title="Percentage vs. Rating")+
+  theme_bw()
+```
+
+From the above scatterplot, we can see that the rating does not depend on the percentage of the cacao.
+
